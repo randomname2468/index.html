@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twitch Chat</title>
+  <style>
+    body {
+      background-color: #f7f4f9; /* Soft pastel background */
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    #chat-box {
+      width: 350px;
+      height: 400px;
+      overflow-y: auto;
+      background-color: #ffffff; /* White chat background */
+      border-radius: 15px;
+      padding: 10px;
+      margin: 20px;
+      border: 3px solid #e0bbf3; /* Pastel purple border */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      font-size: 16px;
+    }
+
+    .message {
+      margin: 10px 0;
+      padding: 8px;
+      border-radius: 10px;
+      background-color: #fceaff; /* Soft pink for each message */
+      color: #333;
+      font-weight: bold;
+    }
+
+    .user-name {
+      color: #b67dff; /* Pastel purple for user names */
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div id="chat-box"></div>
+
+  <script>
+    // This simulates new messages in the chat
+    setInterval(function() {
+      const chatBox = document.getElementById('chat-box');
+      const message = document.createElement('div');
+      message.classList.add('message');
+      message.innerHTML = `<span class="user-name">UserName</span>: Hello! This is a test message.`;
+      chatBox.appendChild(message);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }, 3000); // New message every 3 seconds for testing
+  </script>
+</body>
+</html>
